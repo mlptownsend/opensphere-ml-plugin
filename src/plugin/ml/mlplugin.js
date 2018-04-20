@@ -37,32 +37,34 @@ plugin.ml.MlPlugin.prototype.init = function() {
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
 	script.onload = function() {
-		ml.onload(function() {		  
-			var mapContainer = os.MapContainer.getInstance();
-			var internalMap = mapContainer.getMap();
-			var mapDiv = ml.$('#map-container')[0];
+		ml.onload(function() {
+			ml.auth.verifycred(function() {
+				var mapContainer = os.MapContainer.getInstance();
+				var internalMap = mapContainer.getMap();
+				var mapDiv = ml.$('#map-container')[0];
+				
+				window.mapContainer = mapContainer;
+				window.internalMap = internalMap;			
 			
-			window.mapContainer = mapContainer;
-			window.internalMap = internalMap;			
-		
-			var opts = {
-				api: "OPENSPHERE",
-				lat: undefined,
-				lng: undefined,
-				z: undefined
-			};
-			//opts.lat = 35;
-			//opts.lng = -90;
-			//opts.z = 6;
-			var mlMap = new ml.ui.map.Map(mapDiv, opts, mapContainer);
-			window.mlMap = mlMap;
-			mlMap.onInternalMapAvailable(function() {
-				var zzMap = mlMap.zzMap.get();
-				window.zzMap = zzMap;
+				var opts = {
+					api: "OPENSPHERE",
+					lat: undefined,
+					lng: undefined,
+					z: undefined
+				};
+				//opts.lat = 35;
+				//opts.lng = -90;
+				//opts.z = 6;
+				var mlMap = new ml.ui.map.Map(mapDiv, opts, mapContainer);
+				window.mlMap = mlMap;
+				mlMap.onInternalMapAvailable(function() {
+					var zzMap = mlMap.zzMap.get();
+					window.zzMap = zzMap;
 
-				var mapEditor = new ml.ui.map.editor.MapEditor(mlMap);
-				mapEditor.show();
-				window.mapEditor = mapEditor;
+					var mapEditor = new ml.ui.map.editor.MapEditor(mlMap);
+					mapEditor.show();
+					window.mapEditor = mapEditor;
+				});
 			});
 		});
 	}

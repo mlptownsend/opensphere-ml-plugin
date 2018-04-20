@@ -1,6 +1,9 @@
 var ml = {
  "$": function(x) {},
  onload: function(x) {},
+ auth: {
+  verifycred: function(x) {}
+ }
  ui: {
   map: {
    Map: function() {},
