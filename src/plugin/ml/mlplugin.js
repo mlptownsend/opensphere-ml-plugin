@@ -36,8 +36,7 @@ plugin.ml.MlPlugin.prototype.init = function() {
 			var mapDiv = ml.$('#map-container')[0];
 			
 			window.mapContainer = mapContainer;
-			window.internalMap = internalMap;
-			window.mlMap = mlMap;
+			window.internalMap = internalMap;			
 		
 			var opts = {
 				api: "OPENSPHERE",
@@ -49,6 +48,7 @@ plugin.ml.MlPlugin.prototype.init = function() {
 			//opts.lng = -90;
 			//opts.z = 6;
 			var mlMap = new ml.ui.map.Map(mapDiv, opts, mapContainer);
+			window.mlMap = mlMap;
 			mlMap.onInternalMapAvailable(function() {
 				var zzMap = mlMap.zzMap.get();
 				window.zzMap = zzMap;
