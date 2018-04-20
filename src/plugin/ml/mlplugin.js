@@ -33,6 +33,7 @@ plugin.ml.ID = 'ml-plugin-859f0ba2-c8ba-4edd-814f-cdb556aa750f';
 plugin.ml.MlPlugin.prototype.init = function() {
 	
 	var mlServer = 'https://qa.maplarge.com';
+	//var mlServer = 'https://ml-local.maplarge.net';
 
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
