@@ -61,9 +61,10 @@ plugin.ml.MlPlugin.prototype.init = function() {
 					var zzMap = mlMap.zzMap.get();
 					window.zzMap = zzMap;
 
-					var mapEditor = new ml.ui.map.editor.MapEditor(mlMap);
-					mapEditor.show();
-					window.mapEditor = mapEditor;
+					//var mapEditor = new ml.ui.map.editor.MapEditor(mlMap);
+					//mapEditor.show();
+					//window.mapEditor = mapEditor;
+					window.somDashboard = zzMap.createSOMDashboard();
 				});
 			});
 		});

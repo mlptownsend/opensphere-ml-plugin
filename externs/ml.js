@@ -20,6 +20,9 @@ ml.ui.map.Map.prototype = {
   get: function() {}
  }
 };
+ml.ui.map.Map.zzMap.get.prototype = {
+	"createSOMDashboard": function() {}
+};
 ml.ui.map.editor.MapEditor.prototype = {
  "constructor": function(x) {},
  "show": function() {}
