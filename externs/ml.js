@@ -3,7 +3,7 @@ var ml = {
  onload: function(x) {},
  auth: {
   verifycred: function(x) {}
- }
+ },
  ui: {
   map: {
    Map: function() {},
