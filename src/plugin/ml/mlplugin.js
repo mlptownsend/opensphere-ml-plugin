@@ -9,6 +9,11 @@ goog.require('os.plugin.PluginManager');
  * build.gcc.entry_point to match the new package/class name.
  */
 
+ /**
+ * MlPlugin
+ * @extends {os.plugin.AbstractPlugin}
+ * @constructor
+ */
 plugin.ml.MlPlugin = function() {
   plugin.ml.MlPlugin.base(this, 'constructor');
   this.id = plugin.ml.ID;
