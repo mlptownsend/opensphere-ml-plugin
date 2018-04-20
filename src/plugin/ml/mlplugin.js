@@ -31,6 +31,8 @@ plugin.ml.ID = 'ml-plugin-859f0ba2-c8ba-4edd-814f-cdb556aa750f';
  * @inheritDoc
  */
 plugin.ml.MlPlugin.prototype.init = function() {
+	
+	var mlServer = 'https://qa.maplarge.net';
 
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
@@ -64,7 +66,7 @@ plugin.ml.MlPlugin.prototype.init = function() {
 			});
 		});
 	}
-script.src = 'https://ml-local.maplarge.net/JS';
+script.src = mlServer + '/JS';
 document.getElementsByTagName('head')[0].appendChild(script);
 };
 
