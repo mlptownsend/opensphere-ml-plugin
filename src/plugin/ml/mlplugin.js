@@ -63,7 +63,7 @@ plugin.ml.MlPlugin.prototype.init = function() {
 					var zzMap = mlMap.zzMap.get();
 					window.zzMap = zzMap;
 
-					if (nvp.som) {
+					if (nvp["som"]) {
 						window.somDashboard = zzMap.createSOMDashboard();
 					} else {
 						var mapEditor = new ml.ui.map.editor.MapEditor(mlMap);
