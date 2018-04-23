@@ -40,6 +40,8 @@ plugin.ml.MlPlugin.prototype.init = function() {
 	script.type = 'text/javascript';
 	script.onload = function() {
 		ml.onload(function() {
+			var nvp = ml.nvp();
+			
 			ml.auth.verifycred(function() {
 				var mapContainer = os.MapContainer.getInstance();
 				var internalMap = mapContainer.getMap();
