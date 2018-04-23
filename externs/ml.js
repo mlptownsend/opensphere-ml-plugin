@@ -1,6 +1,7 @@
 var ml = {
  "$": function(x) {},
  onload: function(x) {},
+ nvp: function() {},
  auth: {
   verifycred: function(x) {}
  },
